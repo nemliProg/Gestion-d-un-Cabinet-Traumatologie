@@ -1,0 +1,90 @@
+@use "./header.scss";
+@use "./footer.scss";
+@import 'variables';
+
+header {
+  background: $main-color-gradient;
+}
+.formulaire{
+  background-color: $secondary-color;
+  border-radius: 20px;
+  width: 90%;
+  margin: auto;
+  padding: 20px 0px;
+  @include formDesign;
+}
+
+
+@include h2;
+
+.listPatients{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+    table{
+      width: 500px !important; 
+      padding: 15px;
+      tr{
+        th{
+          background-color: $primary_color;
+          padding: 5px 15px;
+          font-size: 16px;
+          text-align: left;
+          border-radius: 10px;
+          padding-left: 10px;
+          width: 170px !important;
+          font-weight: 600 !important;
+          color: $white;
+        }
+        td{
+          font-size: 14px;
+          padding: 5px 15px ;
+          color: $font_color;
+          font-weight: 400 !important;
+        }
+        .edit{
+          .sup,.mdf{
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+            color: $white;
+            display: block;
+            button{
+              width: 50px;
+              height: 50px;
+              border: none;
+              color: $white;
+              border-radius: 10px;
+              cursor: pointer;
+            }
+          }
+          .sup{
+            
+            margin-bottom: 5px;
+            button{
+              background-color: #E23C3C;
+            }
+          }
+          .mdf{
+            margin-top: 5px;
+            button{
+              background-color: #3c68e2;
+              
+            }
+          }
+        }
+      }
+  }
+  
+} 
+
+@media screen and (max-width: 516px)
+{
+  .lp{
+    
+  }
+  .listPatients{
+    
+  } 
+}
