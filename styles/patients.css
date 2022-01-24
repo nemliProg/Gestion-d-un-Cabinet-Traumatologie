@@ -17,7 +17,7 @@ body {
 .mobileNavigation {
   position: fixed;
   top: 0px;
-  left: 0px;
+  left: 100%;
   min-height: 100vh;
   min-width: 100vw;
   background-color: #4A90DF;
@@ -37,8 +37,6 @@ body {
           justify-content: center;
   gap: 40px;
   overflow-y: hidden;
-  -webkit-transform: translateX(100vw);
-          transform: translateX(100vw);
   -webkit-transition: -webkit-transform 0.5s ease-in;
   transition: -webkit-transform 0.5s ease-in;
   transition: transform 0.5s ease-in;
@@ -61,8 +59,8 @@ body {
 }
 
 .toggle {
-  -webkit-transform: translateX(0px) !important;
-          transform: translateX(0px) !important;
+  -webkit-transform: translateX(-100%) !important;
+          transform: translateX(-100%) !important;
 }
 
 .text {
@@ -425,62 +423,112 @@ header {
   font-family: inherit;
 }
 
-.listPatients {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+@media screen and (max-width: 750px) {
+  .heading2 {
+    font-size: 23px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+.patientsContainer {
+  padding: 0px 10px;
+  display: -ms-grid;
+  display: grid;
+  gap: 15px;
+  -ms-grid-columns: 1fr 15px 1fr;
+  grid-template-columns: 1fr 1fr;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
-.listPatients table {
-  width: 500px !important;
-  padding: 15px;
+.patientsContainer .patient {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.2fr 1.2fr 0.6fr;
+  grid-template-columns: 1.2fr 1.2fr 0.6fr;
 }
-.listPatients table tr th {
-  background-color: #425AE5;
-  padding: 5px 15px;
-  font-size: 16px;
-  text-align: left;
-  border-radius: 10px;
-  padding-left: 10px;
-  width: 170px !important;
-  font-weight: 600 !important;
-  color: #ffffff;
+.patientsContainer .patient .f-child, .patientsContainer .patient .m-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
 }
-.listPatients table tr td {
-  font-size: 14px;
-  padding: 5px 15px;
-  color: #828282;
-  font-weight: 400 !important;
+.patientsContainer .patient .l-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
 }
-.listPatients table tr .edit .sup, .listPatients table tr .edit .mdf {
+.patientsContainer .patient .l-child .sup, .patientsContainer .patient .l-child .mdf {
   border-radius: 50%;
   text-align: center;
   text-decoration: none;
   color: #ffffff;
   display: block;
 }
-.listPatients table tr .edit .sup button, .listPatients table tr .edit .mdf button {
-  width: 50px;
-  height: 50px;
+.patientsContainer .patient .l-child .sup button, .patientsContainer .patient .l-child .mdf button {
+  width: 35px;
+  height: 35px;
   border: none;
   color: #ffffff;
   border-radius: 10px;
   cursor: pointer;
 }
-.listPatients table tr .edit .sup {
-  margin-bottom: 5px;
-}
-.listPatients table tr .edit .sup button {
+.patientsContainer .patient .l-child .sup button {
   background-color: #E23C3C;
 }
-.listPatients table tr .edit .mdf {
-  margin-top: 5px;
-}
-.listPatients table tr .edit .mdf button {
+.patientsContainer .patient .l-child .mdf button {
   background-color: #3c68e2;
+}
+.patientsContainer .patient .f-child p {
+  background-color: #425AE5;
+  padding: 5px 15px;
+  font-size: 14px;
+  text-align: left;
+  border-radius: 10px;
+  padding-left: 10px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.patientsContainer .patient .m-child p {
+  font-size: 14px;
+  padding: 5px 15px;
+  color: #828282;
+  font-weight: 400;
+}
+
+@media (max-width: 700px) {
+  .patientsContainer {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .patient {
+    -ms-grid-columns: (1fr)[2] !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    row-gap: 3px;
+  }
+  .patient .l-child {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/span 2;
+  }
 }

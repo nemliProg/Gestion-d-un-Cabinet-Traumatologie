@@ -73,8 +73,8 @@ if (isset($_POST['nom'])) {
          <div>
            <button class="btn" >Envoyer</button>
          </div>
-      </form>
-    </div>
+        </form>
+      </div>
 
     <footer>
       <div class="footerDivs">
@@ -106,9 +106,6 @@ if (isset($_POST['nom'])) {
       <a class="firstpage" href="./index.php">Home</a>
       <a id="login"  href="./patients.php"><button>Login</button></a>
     </div>
-
-
-
       <script src="./scripts/script.js"></script>
     </body>
 </html>

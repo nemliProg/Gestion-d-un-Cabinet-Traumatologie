@@ -93,13 +93,12 @@
     </form>
   </div>
   <h2 class="heading2 lp">Liste des patients</h2>
-  
-        <?php
+    <div class='patientsContainer'>
+         <?php
           include("connection.php");
           $query = 'SELECT * FROM patient';
           $result = $con ->query($query);
           $data = $result ->fetchAll();
-          echo "<div class='listPatients'>";
           for ($i=0; $i <count($data) ; $i++) { 
             $idP = $data[$i]['idP'];
             $nomP = $data[$i]['nomP'];
@@ -108,11 +107,35 @@
             $telP = $data[$i]['tel'];
             $emailP = $data[$i]['email'];
             $maladieP = $data[$i]['maladie'];
-            echo "<table><tr><th>ID</th><td>$idP</td><td class='edit' rowspan='7'><a class='sup' onclick='return confirm(\"etes vous sur de vouloir supprimer $nomP $prenomP\");' href='delete_patient.php?id=$idP'><button><i class='fas fa-user-minus'></i></button></a><a class='mdf' href='update_patient.php?id=$idP'><button><i class='fas fa-user-edit'></i></button></a> </td></tr><tr> <th>Nom</th> <td>$nomP</td></tr><tr> <th>Prenom</th> <td>$prenomP</td></tr><tr> <th>Date de Naissance</th> <td>$dnP</td></tr><tr> <th>Numéro de téléphone</th> <td>$telP</td></tr><tr> <th>Email</th><td>$emailP</td></tr><tr> <th>Maladie</th> <td>$maladieP</td></tr></table>";
+            echo "
+            <div class='patient'>
+              <div class='f-child'>
+                <p>Id</p>
+                <p>Nom</p>
+                <p>Prenom</p>
+                <p>n° telephone</p>
+                <p>date de naissance</p>
+                <p>email</p><p>maladie</p>
+              </div>
+              <div class='m-child'>
+                <p>$idP</p>
+                <p>$nomP</p>
+                <p>$prenomP</p>
+                <p>$dnP</p>
+                <p>$telP</p>
+                <p>$emailP</p>
+                <p>$maladieP</p>
+              </div>
+              <div class='l-child'>
+                <a class='sup' onclick='return confirm(\"etes vous sur de vouloir supprimer $nomP $prenomP\")' href='delete_patient.php?id=$idP'><button><i class='fas fa-user-minus'></i></button></a>
+                <a class='mdf' href='update_patient.php?id=$idP'><button><i class='fas fa-user-edit'></i></button></a>
+              </div>
+            </div>";
           }
-          echo "</div>";
+          
         ?>
-  </div>
+        </div>
+      </div>
   <footer>
     <div class="footerDivs">
       <img src="./assets/logo/rr.png" alt="footer logo" />

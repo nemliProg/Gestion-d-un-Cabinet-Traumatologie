@@ -18,6 +18,13 @@ html {
   font-family: inherit;
 }
 
+@media screen and (max-width: 750px) {
+  .heading2 {
+    font-size: 23px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+  }
+}
 h1 {
   font-size: 1.7rem !important;
 }

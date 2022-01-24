@@ -29,6 +29,13 @@ $white: #ffffff;//c1
     padding-bottom: 15px;
     font-family: inherit;
   }
+  @media screen and (max-width: 750px) {
+    .heading2 {
+      font-size: 23px;
+      margin-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
 }
 @mixin formDesign {
   form{

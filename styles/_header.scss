@@ -10,7 +10,7 @@ body{
 .mobileNavigation{
   position: fixed;
   top: 0px;
-  left: 0px;
+  left: 100%;
   min-height: 100vh;
   min-width: 100vw;
   background-color: $tertiary-color;
@@ -21,7 +21,7 @@ body{
   justify-content: center;
   gap: 40px;
   overflow-y: hidden;
-  transform: translateX(100vw);
+  // transform: translateX(100vw);
   transition: transform 0.5s ease-in;
   a button{
     @include loginButton;
@@ -34,7 +34,7 @@ body{
 
 }
 .toggle{
-  transform: translateX(0px) !important;
+  transform: translateX(-100%) !important;
 }
 
 

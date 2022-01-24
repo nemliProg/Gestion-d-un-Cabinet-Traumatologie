@@ -17,7 +17,7 @@ body {
 .mobileNavigation {
   position: fixed;
   top: 0px;
-  left: 0px;
+  left: 100%;
   min-height: 100vh;
   min-width: 100vw;
   background-color: #4A90DF;
@@ -37,8 +37,6 @@ body {
           justify-content: center;
   gap: 40px;
   overflow-y: hidden;
-  -webkit-transform: translateX(100vw);
-          transform: translateX(100vw);
   -webkit-transition: -webkit-transform 0.5s ease-in;
   transition: -webkit-transform 0.5s ease-in;
   transition: transform 0.5s ease-in;
@@ -61,8 +59,8 @@ body {
 }
 
 .toggle {
-  -webkit-transform: translateX(0px) !important;
-          transform: translateX(0px) !important;
+  -webkit-transform: translateX(-100%) !important;
+          transform: translateX(-100%) !important;
 }
 
 .text {
@@ -342,13 +340,13 @@ header {
 .formulaire {
   background-color: #eceffc !important;
   border-radius: 10px;
-  width: 60%;
+  width: 70%;
   margin: auto;
   margin-bottom: 7%;
-  padding: 30px 0px;
+  padding: 30px 0px 50px;
 }
 .formulaire form {
-  width: max(360px, 60%);
+  width: 500px;
   margin: auto;
 }
 .formulaire form #l-nom, .formulaire form #l-prenom, .formulaire form #l-email, .formulaire form #l-msg {
@@ -370,11 +368,11 @@ header {
   color: #ffffff;
   border-radius: 10px;
   width: 120px;
-  margin-left: 70%;
-  height: 40px;
+  height: 30px;
   border: none;
   font-size: 0.7em;
   font-weight: bold;
+  float: right;
   cursor: pointer;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -397,15 +395,27 @@ header {
   }
 
   .formulaire {
-    width: 100%;
+    width: 320px;
+    width: 95%;
+    margin: auto;
   }
-  .formulaire #l-nom, .formulaire #l-prenom, .formulaire #l-email, .formulaire #l-msg {
+  .formulaire form {
+    width: 80%;
+  }
+  .formulaire form #l-nom, .formulaire form #l-prenom, .formulaire form #l-email, .formulaire form #l-msg {
     font-size: 0.5em;
   }
-  .formulaire #nom, .formulaire #prenom, .formulaire #email, .formulaire #msg {
+  .formulaire form button {
+    border-radius: 7px;
+    width: 100px;
+    font-size: 0.5em;
+  }
+  .formulaire form #nom, .formulaire form #prenom, .formulaire form #email, .formulaire form #msg {
     width: 100%;
     padding: 1px 0;
   }
+}
+@media (max-width: 450px) {
   .formulaire button {
     border-radius: 7px;
     width: 100px;

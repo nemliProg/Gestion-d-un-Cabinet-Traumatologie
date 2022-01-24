@@ -18,6 +18,7 @@
   padding-bottom: 44vw;
   h1 {
     position: absolute;
+    width: 50%;
     top: 10vw;
     padding-left: 5vw;
     color: $white;
@@ -184,7 +185,7 @@
       height: 150px;
     }
   }
-  
+
   .column {
     width: 100%;
     h3 {
@@ -212,13 +213,23 @@
     }
   }
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 570px) {
   .top {
     padding-bottom: 50vw;
     h1 {
       top: 10px;
-      font-size: 18px;
+      font-size: 14px;
+      width: 100%;
+      margin: auto;
     }
+    
+    .heading2 {
+      font-size: 20px;
+      margin-top: 27px;
+  }
+  .top .img-holder img {
+      width: 100%;
+  }
   }
   .flex {
     flex-direction: column;
@@ -236,6 +247,24 @@
   .flex {
     .column {
       width: 70%;
+    }
+  }
+  h3{
+    font-size: .8em;
+}
+  .testimonials .cards .card .firstPart p {
+    font-size: 12px;
+}
+  .testimonials .cards .card .firstPart img {
+    width: 70px;
+    height: 70px;
+}
+}
+@media screen and (max-width: 500px) {
+  .top{
+    .img-holder{
+        width: 110px !important;
+        height: 110px !important;
     }
   }
 }

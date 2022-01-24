@@ -45,7 +45,7 @@
   </svg>
   <div class="top">
     <h1>
-      Ensuring Your Protection <br />
+      Ensuring Your Protection 
       & Providing The Best <br />
       Affordable Healthcare <br />
       With Our Doctors
